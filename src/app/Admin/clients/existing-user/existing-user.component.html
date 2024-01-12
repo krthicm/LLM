@@ -1,0 +1,26 @@
+<app-adminnav></app-adminnav>
+<br>
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+        <table  class="table table-striped table-hover table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">SYSTEM ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">MAIL ID</th>
+                <th scope="col">DELETE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let u of user">
+                <td scope="row">{{u.systemid}}</td>
+                <td>{{u.name}}</td>
+                <td>{{u.mailid}}</td>
+                <td><button type="submit" value="{{u.systemid}}" class="btn btn-primary" (click)="delete(u.systemid)">DELETE</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>

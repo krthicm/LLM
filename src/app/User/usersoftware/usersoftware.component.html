@@ -1,0 +1,33 @@
+<app-usernav></app-usernav>
+<br>
+<div class="container text-center" >
+    
+    <div class="row">
+        <div class="col">
+        <table  class="table table-striped table-hover table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">PRODUCT</th>
+                <th scope="col">PLAN DURATION</th>
+                <th scope="col">INSTALLATION DATE</th>
+                <th scope="col">EXPIRY DATE</th>
+                <th scope="col">VALIDITY</th>
+                <th scope="col">RENEW</th>
+                <th scope="col">DELETE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pr of details">
+                <td scope="row">{{pr.productname}}</td>
+                <td>{{pr.duration}}</td>
+                <td>{{pr.installationdate}}</td>
+                <td>{{pr.expirydate}}</td>
+                <td>{{pr.validity}}</td>
+                <td><button type="submit" class="btn btn-primary" [disabled]="pr.validity>8" (click)="renew(pr)" >RENEW</button></td>
+                <td><button type="submit" class="btn btn-primary" (click)="deletepr(pr)" >DELETE</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>
